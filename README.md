@@ -13,7 +13,11 @@ There are a couple of dependencies we need to make sure we have installed.
 
 First of all, make sure you have a functioning version of `python3`
 
-To check if you have the required libraries run `pip freeze` and `npm list`. You must have a `5.x` version of `flask-socketio` and a `>3.x` version of socketio.
+Then, you can use the created virutal environment to make sure you have all dependencies installed by simply typing `./Scripts/activate` on your command line.
+
+From here, you should be able to skip directly to the *Run* section. Howeveer, I will leave steps to install dependencies below just in case.
+
+To check if you have the required libraries run `pip freeze` and `npm list`. You must have a `5.x` version of `flask-socketio` and a `>3.x` version of socketio, as well as all of the other libraries listed below.
 
 If you don't then, for our Backend you must have the following libraries:
 - `flask`
@@ -47,8 +51,9 @@ To run our app, we will first start out backend server, then our frontend and th
 
 - Running the frontend server
     - Here we will just use a simple python http server to run on port `8000`
+        - Open a new terminal window
         - Make sure you are in `./frontend` directory, then:
-        - `py -m http.server`
+            - `py -m http.server`
 
 - Running the data feed
     - Simply run the python script

@@ -8,7 +8,7 @@
  - The creation of different exchange objects was probably not necessary, I could have setup the backend with JS and just fetched the data using WebSockets and fed it directly into the front-end. I found it clearer and more scalable to do it like this though, as it is encapsulates all the necessary functions and variables nicely.
 
  ## 3. If you have to scale your solution to 100 users/second traffic what changes would you make, if any?
- - First, I would try and minimize the amount of data sent to front-end by only sending when there has been an update in price, instead of every `x` seconds, or maybe updating every 5 seconds instead.
+ - First, I would try and minimize the amount of data sent to front-end by only sending when there has been an update in price, instead of every `x` seconds, or maybe updating every 5 seconds instead. Load balancing and sharding or replication would be things I would also definitely consider for increased traffic, as this would allow me to reduce the stress on the requests made on the server. It would also provide a more reliable system, as if there is any error at the moment, the entire site would crash.
 
  ## 4.What are some other enhancements you would have made, if you had more time to do this implementation
  - The first enhacements would clearly be to the front-end.
@@ -20,4 +20,4 @@
 - There could also be enhancements made to the backend
     - First, I would create an exchange object for each exchange to inherit. This inheritance would make it much easier to add an exchange, only having to deal with the websocket and parsing the data.
 
-    - Second, the way in which data is sent to the front-end could be optimized by keeping track of when the prices are updated, instead of constantly sending data, and updating the webpage. This would also help
+    - Second, the way in which data is sent to the front-end could be optimized by keeping track of when the prices are updated, instead of constantly sending data, and updating the webpage. This would also help with more traffic in the website.
