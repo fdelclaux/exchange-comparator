@@ -50,7 +50,6 @@ class Coinbase(threading.Thread):
     def on_message(self,ws,message):
         json_message = json.loads(message)
         # print(json_message)
-
         with self.lock:
 
             if json_message['product_id'] == 'BTC-USD':
@@ -82,7 +81,7 @@ class Binance(threading.Thread):
         self.ws =  websocket.WebSocketApp(self.url, on_open = self.on_open, on_message=self.on_message)
 
     def run(self):
-        
+
         while True:
             self.ws.run_forever()
 
@@ -117,29 +116,7 @@ class Binance(threading.Thread):
                 self.orderBook["ETH-USDT"]['ask'] = json_message["a"]
 
 
-# lock = threading.Lock()
-# orderBooks = {
-#     "Coinbase": {
-#         "BTC-USDT":{},
-#         "ETH-USDT":{}
-#     },
-#     "Binance": {
-#         "BTC-USDT":{},
-#         "ETH-USDT":{}
-#     }
-# }
 
-# coinbase = Coinbase(orderBook = orderBooks, lock = lock)
-# binance = Binance(orderBook = orderBooks, lock = lock)
-
-# coinbase.start()
-# binance.start()
-
-# while True:
-    
-#     print(orderBooks)
-
-#     time.sleep(1)
 
 
 
