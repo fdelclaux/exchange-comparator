@@ -49,16 +49,6 @@ To run our app, we will first start out backend server, then our frontend and th
     - Run Flask App, this by default will set up the server on port `5000`
         - `py -m flask run`
 
-- Running the frontend server
-    - Here we will just use a simple python http server to run on port `8000`
-        - Open a new terminal window
-        - Make sure you are in `./frontend` directory, then:
-            - `py -m http.server`
-
-- Running the data feed
-    - Simply run the python script
-        - `py main.py`
-
-Now, if you open up `http://localhost:8000/` on your browser, you will be able to see the webpage.
+Now, if you open up `http://localhost:5000/` on your browser, you will be able to see the webpage.
 
         
